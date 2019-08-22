@@ -37,7 +37,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             placemark = intent.extras.getParcelable<PlacemarkModel>("placemark_edit")
             placemarkTitle.setText(placemark.title)
             placemarkDescription.setText(placemark.description)
-            placemarkPriority.setText(placemark.priority)
             placemarkImage.setImageBitmap(readImageFromPath(this, placemark.image))
             if (placemark.image != null) {
                 chooseImage.setText(R.string.change_task_image)
