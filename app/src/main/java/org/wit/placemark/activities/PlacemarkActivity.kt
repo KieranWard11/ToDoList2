@@ -62,6 +62,10 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             finish()
         }
 
+        placemarkLocation.setOnClickListener {
+            info ("Set Location Pressed")
+        }
+
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
             info ("Select image")
