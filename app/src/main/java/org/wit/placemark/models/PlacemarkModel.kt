@@ -7,5 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class PlacemarkModel (var id: Long =0,
                            var title: String = "",
                            var description: String = "",
-                           var priority: String = "") : Parcelable {
+                           var priority: String = "",
+                           var image: String = "") : Parcelable {
 }
