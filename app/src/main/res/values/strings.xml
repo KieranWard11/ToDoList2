@@ -6,4 +6,6 @@
     <string name="hint_placemarkPriority">Task Priority</string>
     <string name="menu_addPlacemark">Add</string>
     <string name="menu_cancelPlacemark">Cancel</string>
+    <string name="enter_task_title">Please enter a task</string>
+    <string name="save_task">Save Task</string>
 </resources>
