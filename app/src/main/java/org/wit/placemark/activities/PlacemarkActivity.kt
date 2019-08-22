@@ -1,5 +1,6 @@
 package org.wit.placemark.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +13,7 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.startActivityForResult
 import org.jetbrains.anko.toast
 import org.wit.placemark.R
+import org.wit.placemark.helpers.readImage
 import org.wit.placemark.helpers.showImagePicker
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
@@ -73,11 +75,21 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.item_cancel-> finish()
-        }
-        return super.onOptionsItemSelected(item)
+      when (item?.itemId) {
+        R.id.item_cancel -> finish()
+      }
+      return super.onOptionsItemSelected(item)
     }
 
-
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+      super.onActivityResult(requestCode, resultCode, data)
+      when (requestCode) {
+        IMAGE_REQUEST -> {
+          if (data != null) {
+              placemark.image = data.getData().toString()
+              placemarkImage.setImageBitmap(readImage(this, resultCode, data))
+          }
+        }
+      }
+    }
 }
