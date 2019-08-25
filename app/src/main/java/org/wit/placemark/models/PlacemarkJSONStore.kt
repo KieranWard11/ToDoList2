@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.AnkoLogger
 import org.wit.placemark.helpers.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 val JSON_FILE = "placemarks.json"
 val gsonBuilder = GsonBuilder().setPrettyPrinting().create()
@@ -39,7 +40,20 @@ class PlacemarkJSONStore : PlacemarkStore, AnkoLogger {
   }
 
   override fun update(placemark: PlacemarkModel) {
-    // todo
+    val placemarksList = findAll() as ArrayList<PlacemarkModel>
+    var foundPlacemark: PlacemarkModel? = placemarksList.find { p -> p.id == placemark.id }
+    if (foundPlacemark != null) {
+      foundPlacemark.title = placemark.title
+      foundPlacemark.description = placemark.description
+      foundPlacemark.priority = placemark.priority
+      foundPlacemark.image = placemark.image
+    }
+    serialize()
+  }
+
+  override fun delete(placemark: PlacemarkModel) {
+    placemarks.remove(placemark)
+    serialize()
   }
 
   private fun serialize() {
