@@ -57,10 +57,13 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
                 } else {
                     app.placemarks.create(placemark.copy())
                 }
+                info("add Button Pressed: $placemarkTitle")
+                setResult(AppCompatActivity.RESULT_OK)
+                finish()
             }
-            info("add Button Pressed: $placemarkTitle")
-            setResult(AppCompatActivity.RESULT_OK)
-            finish()
+            //info("add Button Pressed: $placemarkTitle")
+            //setResult(AppCompatActivity.RESULT_OK)
+            //finish()
         }
 
         chooseImage.setOnClickListener {
