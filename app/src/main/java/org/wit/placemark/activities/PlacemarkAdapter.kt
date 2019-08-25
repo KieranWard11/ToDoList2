@@ -32,6 +32,7 @@ class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>,
         fun bind(placemark: PlacemarkModel,  listener : PlacemarkListener) {
             itemView.title.text = placemark.title
             itemView.description.text = placemark.description
+            itemView.priority.text = placemark.priority
             itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, placemark.image))
             itemView.setOnClickListener { listener.onPlacemarkClick(placemark) }
         }

@@ -37,6 +37,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             placemark = intent.extras.getParcelable<PlacemarkModel>("placemark_edit")
             placemarkTitle.setText(placemark.title)
             placemarkDescription.setText(placemark.description)
+            placemarkPriority.setText(placemark.priority)
             placemarkImage.setImageBitmap(readImageFromPath(this, placemark.image))
             if (placemark.image != null) {
                 chooseImage.setText(R.string.change_task_image)
@@ -62,7 +63,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             finish()
         }
 
-
         chooseImage.setOnClickListener {
             showImagePicker(this, IMAGE_REQUEST)
             info ("Select image")
@@ -77,7 +77,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
         menuInflater.inflate(R.menu.menu_placemark, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
       when (item?.itemId) {
