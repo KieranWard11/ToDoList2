@@ -17,7 +17,7 @@ import org.wit.placemark.helpers.showImagePicker
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
 
-class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
+class TaskActivity : AppCompatActivity(), AnkoLogger {
 
     var placemark = PlacemarkModel()
     lateinit var app: MainApp

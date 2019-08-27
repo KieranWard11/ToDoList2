@@ -40,13 +40,13 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.add_task -> startActivityForResult<PlacemarkActivity>(0)
+            R.id.add_task -> startActivityForResult<TaskActivity>(0)
         }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onPlacemarkClick(placemark: PlacemarkModel) {
-        startActivityForResult(intentFor<PlacemarkActivity>().putExtra("placemark_edit", placemark), 0)
+        startActivityForResult(intentFor<TaskActivity>().putExtra("placemark_edit", placemark), 0)
     }
 
     override fun onCompleteClick(placemark: PlacemarkModel) {
