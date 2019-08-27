@@ -3,20 +3,18 @@ package org.wit.placemark.main
 import android.app.Application
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
-import org.wit.placemark.models.PlacemarkJSONStore
-import org.wit.placemark.models.PlacemarkMemStore
-import org.wit.placemark.models.PlacemarkStore
-import org.wit.placemark.models.PlacemarkModel
+import org.wit.placemark.models.TaskJSONStore
+import org.wit.placemark.models.TaskStore
 
 class MainApp: Application(), AnkoLogger {
 
     //val placemarks = ArrayList<PlacemarkModel>()
-    //val placemarks = PlacemarkMemStore()
-    lateinit var placemarks: PlacemarkStore
+    //val placemarks = TaskMemStore()
+    lateinit var placemarks: TaskStore
 
     override fun onCreate() {
         super.onCreate()
-        placemarks = PlacemarkJSONStore(applicationContext)
+        placemarks = TaskJSONStore(applicationContext)
         info("To Do List Started")
         //placemarks.add(PlacemarkModel("One", "About one..."))
         //placemarks.add(PlacemarkModel("Two", "About two..."))

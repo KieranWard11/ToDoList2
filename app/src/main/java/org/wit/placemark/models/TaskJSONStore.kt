@@ -3,7 +3,6 @@ package org.wit.placemark.models
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.google.gson.internal.GsonBuildConfig
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.AnkoLogger
 import org.wit.placemark.helpers.*
@@ -18,7 +17,7 @@ fun generateRandomId(): Long {
   return Random().nextLong()
 }
 
-class PlacemarkJSONStore : PlacemarkStore, AnkoLogger {
+class TaskJSONStore : TaskStore, AnkoLogger {
   val context: Context
   var placemarks = mutableListOf<PlacemarkModel>()
 
