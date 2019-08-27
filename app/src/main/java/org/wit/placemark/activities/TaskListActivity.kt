@@ -14,7 +14,7 @@ import org.wit.placemark.R
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
 
-class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
+class TaskListActivity : AppCompatActivity(), PlacemarkListener {
 
     lateinit var app: MainApp
 
@@ -23,12 +23,10 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
         setContentView(R.layout.activity_task_list)
         app = application as MainApp
 
-        //layout and populate for display
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         loadPlacemarks()
 
-        //enable action bar and set title
         toolbarMain.title = title
         setSupportActionBar(toolbarMain)
     }
