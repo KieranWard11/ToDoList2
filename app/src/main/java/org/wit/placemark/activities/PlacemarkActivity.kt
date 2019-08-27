@@ -39,6 +39,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             if (placemark.image != null) {
                 chooseImage.setText(R.string.change_task_image)
             }
+            taskImage.visibility=View.VISIBLE
             btnAdd.setText(R.string.button_saveTask)
         }
 

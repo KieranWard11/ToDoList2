@@ -14,18 +14,21 @@
 
         <ImageView
             android:id="@+id/imageIcon"
+            android:contentDescription="@string/taskImage"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"/>
+            android:layout_marginEnd="16dp"/>
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/imageIcon"
+            android:layout_toEndOf="@+id/imageIcon"
+            android:layout_toStartOf="@id/checkBox"
+            android:layout_marginEnd="16dp"
             android:textSize="30sp"/>
 
         <TextView
@@ -33,20 +36,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:layout_toRightOf="@+id/imageIcon"/>
+            android:layout_toEndOf="@+id/imageIcon"/>
 
         <TextView
             android:id="@+id/priority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/description"
-            android:layout_toRightOf="@+id/imageIcon"/>
+            android:layout_toEndOf="@id/imageIcon"/>
 
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
 
     </RelativeLayout>
