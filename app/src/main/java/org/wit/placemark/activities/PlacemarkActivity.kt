@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_placemark.*
 import kotlinx.android.synthetic.main.activity_placemark_list.*
 import kotlinx.android.synthetic.main.card_placemark.*
@@ -38,7 +39,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             placemarkTitle.setText(placemark.title)
             placemarkDescription.setText(placemark.description)
             placemarkPriority.setText(placemark.priority)
-            placemarkImage.setImageBitmap(readImageFromPath(this, placemark.image))
+            taskImage.setImageBitmap(readImageFromPath(this, placemark.image))
             if (placemark.image != null) {
                 chooseImage.setText(R.string.change_task_image)
             }
@@ -101,7 +102,8 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
         IMAGE_REQUEST -> {
           if (data != null) {
               placemark.image = data.getData().toString()
-              placemarkImage.setImageBitmap(readImage(this, resultCode, data))
+              taskImage.setImageBitmap(readImage(this, resultCode, data))
+              taskImage.visibility=View.VISIBLE
               chooseImage.setText(R.string.change_task_image)
           }
         }
