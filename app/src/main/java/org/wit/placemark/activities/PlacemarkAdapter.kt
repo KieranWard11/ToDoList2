@@ -4,14 +4,19 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.card_placemark.*
 import kotlinx.android.synthetic.main.card_placemark.view.*
 import org.wit.placemark.R
+import org.jetbrains.anko.toast
 import org.wit.placemark.helpers.readImageFromPath
 import org.wit.placemark.models.PlacemarkModel
 
 interface PlacemarkListener {
     fun onPlacemarkClick(placemark: PlacemarkModel)
+
+    fun onCompleteClick(placemark: PlacemarkModel)
 }
+
 
 class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>, private val listener: PlacemarkListener) : RecyclerView.Adapter<PlacemarkAdapter.MainHolder>() {
 
@@ -33,6 +38,7 @@ class PlacemarkAdapter constructor(private var placemarks: List<PlacemarkModel>,
             itemView.description.text = placemark.description
             itemView.priority.text = placemark.priority
             itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, placemark.image))
+            itemView.checkBox.setOnClickListener { listener.onCompleteClick(placemark) }
             itemView.setOnClickListener { listener.onPlacemarkClick(placemark) }
         }
     }

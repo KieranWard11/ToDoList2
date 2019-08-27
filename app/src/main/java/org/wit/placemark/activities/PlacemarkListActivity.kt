@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
 import kotlinx.android.synthetic.main.activity_placemark_list.*
+import kotlinx.android.synthetic.main.card_placemark.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
+import org.jetbrains.anko.toast
 import org.wit.placemark.PlacemarkAdapter
 import org.wit.placemark.PlacemarkListener
 import org.wit.placemark.R
 import org.wit.placemark.main.MainApp
 import org.wit.placemark.models.PlacemarkModel
+import java.lang.Thread.sleep
+import java.nio.file.Files.delete
 
 class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
 
@@ -47,6 +51,11 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
 
     override fun onPlacemarkClick(placemark: PlacemarkModel) {
         startActivityForResult(intentFor<PlacemarkActivity>().putExtra("placemark_edit", placemark), 0)
+    }
+
+    override fun onCompleteClick(placemark: PlacemarkModel) {
+        app.placemarks.delete(placemark)
+        loadPlacemarks()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

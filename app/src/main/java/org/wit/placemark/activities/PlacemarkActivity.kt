@@ -85,10 +85,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.item_delete -> {
-                app.placemarks.delete(placemark)
-                finish()
-            }
             R.id.item_cancel -> {
                 finish()
             }
