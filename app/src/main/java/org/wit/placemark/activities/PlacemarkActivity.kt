@@ -32,8 +32,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_placemark)
         app = application as MainApp
 
-        if (intent.hasExtra("placemark_edit"))
-        {
+        if (intent.hasExtra("placemark_edit")) {
             edit = true
             placemark = intent.extras.getParcelable<PlacemarkModel>("placemark_edit")
             placemarkTitle.setText(placemark.title)
@@ -43,7 +42,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             if (placemark.image != null) {
                 chooseImage.setText(R.string.change_task_image)
             }
-            btnAdd.setText(R.string.save_task)
+            btnAdd.setText(R.string.button_saveTask)
         }
 
         btnAdd.setOnClickListener() {
@@ -51,7 +50,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             placemark.description = placemarkDescription.text.toString()
             placemark.priority = placemarkPriority.text.toString()
             if (placemark.title.isEmpty()) {
-                toast(R.string.enter_task_title)
+                toast(R.string.enter_taskTitle)
             } else {
                 if (edit) {
                     app.placemarks.update(placemark.copy())
@@ -62,9 +61,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
                 setResult(AppCompatActivity.RESULT_OK)
                 finish()
             }
-            //info("add Button Pressed: $placemarkTitle")
-            //setResult(AppCompatActivity.RESULT_OK)
-            //finish()
         }
 
         chooseImage.setOnClickListener {
@@ -72,7 +68,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
             info ("Select image")
         }
 
-        //Add action bar and set title
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
     }
@@ -85,7 +80,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.item_cancel -> {
+            R.id.cancel_edit -> {
                 finish()
             }
         }
@@ -100,7 +95,6 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
               placemark.image = data.getData().toString()
               taskImage.setImageBitmap(readImage(this, resultCode, data))
               taskImage.visibility=View.VISIBLE
-              chooseImage.setText(R.string.change_task_image)
           }
         }
       }

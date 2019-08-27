@@ -1,16 +1,15 @@
 <resources>
     <string name="app_name">To Do List</string>
-    <string name="button_addPlacemark">Add Task</string>
-    <string name="hint_placemarkTitle">Task</string>
-    <string name="hint_placemarkDescription">Task Description</string>
-    <string name="hint_placemarkPriority">Task Priority</string>
-    <string name="menu_addPlacemark">Add</string>
-    <string name="menu_cancelPlacemark">Cancel</string>
-    <string name="menu_deleteTask">Delete</string>
-    <string name="enter_task_title">Please enter a task</string>
-    <string name="save_task">Save Task</string>
+    <string name="button_addTask">Add Task</string>
+    <string name="hint_taskTitle">Task</string>
+    <string name="hint_taskDescription">Task Description</string>
+    <string name="hint_taskPriority">Task Priority</string>
+    <string name="menu_addTask">Add</string>
+    <string name="menu_cancelTask">Cancel</string>
+    <string name="enter_taskTitle">Please enter a task</string>
+    <string name="button_saveTask">Save Task</string>
     <string name="button_addImage">Add Image</string>
-    <string name="select_task_image">Select task image</string>
-    <string name="change_task_image">Change task image</string>
-    <string name="card_complete">Complete</string>
+    <string name="select_task_image">Select Task Image</string>
+    <string name="change_task_image">Change Task Image</string>
+    <string name="button_complete">Complete</string>
 </resources>
