@@ -13,6 +13,9 @@ Before adding an image to the task, a place holder image of the app icon would b
 An important feature I wanted to add to my app was a checkbox to complete or clear off a task when pressed. I wanted the user to be able to check off the task from where they were viewing the task. My inspiration for this was from Google Tasks which has a circle button next to each task that completes and clears the task when pressed.
 ## Kotlin intuitiveness and RelativeLayout
 Through the development I ingored the yellow warning appearing in the code. Then, while cleaning up the positioning of the items on the task card I decided to read them. The warning recommend using toEndOf instead of toRightOf for postioning items in relation to one another to better support right-to-left layouts. As well, the title could expand and overlap the check box button due to localised text expansion.
+# Features I want to add
+## Registration and login
+I wanted to add a registration and login in system for the app. I made the layout as are show below, they are still in the file. The buttons and text fields corresponded with a class called LoginActivity, this class would sort which view to show and would deal with passing the information to a helper class called DatabaseHelper. This helper class uses SQLite to create a table for the users. When the user first registers it adds to the table. Then when the user wants to login it compares the information entered with the store details in the SQLite database. I got the layouts and activity to work in a separate project, but I could not incorporate them into my app.
 # Readability
 I made sure that variables had appropriate and descriptive name as we learned in Programming Fundamentals in previous years. This is so it’s easy to know what the variable is used for and where is it being used, not just for the developer but for anyone who may develop the app in the future.
 # Testing
