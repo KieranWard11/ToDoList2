@@ -39,6 +39,9 @@ class TaskListActivity : AppCompatActivity(), PlacemarkListener {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.add_task -> startActivityForResult<TaskActivity>(0)
+            R.id.sort_tasks -> {
+                //placemarks.sortedWith(compareBy({it.title}))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
