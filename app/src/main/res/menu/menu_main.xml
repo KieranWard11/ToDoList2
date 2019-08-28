@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/sort_tasks"
+        android:title="@string/menu_sortTasks"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/add_task"
         android:title="@string/menu_addTask"
         android:icon="@android:drawable/ic_menu_add"

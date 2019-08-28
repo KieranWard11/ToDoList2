@@ -5,6 +5,7 @@
     <string name="hint_taskDescription">Task Description</string>
     <string name="hint_taskPriority">Task Priority</string>
     <string name="menu_addTask">Add</string>
+    <string name="menu_sortTasks">Sort</string>
     <string name="menu_cancelTask">Cancel</string>
     <string name="enter_taskTitle">Please enter a task</string>
     <string name="button_saveTask">Save Task</string>
