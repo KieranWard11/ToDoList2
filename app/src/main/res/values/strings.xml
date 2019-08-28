@@ -13,4 +13,10 @@
     <string name="change_task_image">Change Task Image</string>
     <string name="button_complete">Complete</string>
     <string name="taskImage">Task Image</string>
+    <string name="registrationButton">Register</string>
+    <string name="loginButton">Login</string>
+    <string name="hint_register_name">Username</string>
+    <string name="hint_register_email">Email</string>
+    <string name="hint_register_password">Password</string>
+    <string name="registerSave">Save</string>
 </resources>
